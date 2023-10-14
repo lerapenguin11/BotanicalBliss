@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Botanical Bliss</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_on1">Learn Many Plants Species</string>
+    <string name="text_on1">Let\'s learn about the many plant species that exist in this world</string>
+    <string name="next">Next</string>
 </resources>
