@@ -1,4 +1,4 @@
-package com.example.botanicalbliss.presentation
+package com.example.botanicalbliss.presentation.onboarding
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
