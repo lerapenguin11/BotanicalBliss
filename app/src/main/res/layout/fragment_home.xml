@@ -26,7 +26,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="160dp"
                     android:background="@drawable/bg_toolbar"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +46,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="23dp"
+                        app:layout_constraintVertical_bias="0.6"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
@@ -95,8 +96,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="#2DDA93"
                         android:elevation="10dp"
-                        android:outlineAmbientShadowColor="#2DDA93"
-                        android:outlineSpotShadowColor="#2DDA93"
+                        app:cardElevation="10dp"
                         app:cardCornerRadius="3dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"

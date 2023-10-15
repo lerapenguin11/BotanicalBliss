@@ -1,11 +1,11 @@
 package com.example.data.repository
 
 import com.example.domain.entities.Articles
+import com.example.domain.entities.Photo
 
 class FlowersDataSourceImpl : FlowersDataSource {
 
     override fun getTopArticles(top: MutableList<Articles>): MutableList<Articles> {
-        val mutableData = mutableListOf<Articles>()
         val list = mutableListOf<Articles>()
 
         for (i in top){
@@ -19,7 +19,23 @@ class FlowersDataSourceImpl : FlowersDataSource {
 
             list.add(listLetterModel)
         }
-        //mutableData.value = list
+
+        return list
+    }
+
+    override fun getPhoto(photo: MutableList<Photo>): MutableList<Photo> {
+        val list = mutableListOf<Photo>()
+
+        for (i in photo){
+            val id = i.id
+            val icon = i.icon
+            val tag = i.tag
+
+            val listLetterModel = Photo(
+                id = id, icon = icon, tag = tag)
+
+            list.add(listLetterModel)
+        }
 
         return list
     }

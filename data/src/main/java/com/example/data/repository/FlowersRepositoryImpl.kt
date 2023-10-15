@@ -1,6 +1,7 @@
 package com.example.data.repository
 
 import com.example.domain.entities.Articles
+import com.example.domain.entities.Photo
 import com.example.domain.repository.FlowersRepository
 
 class FlowersRepositoryImpl(
@@ -9,5 +10,9 @@ class FlowersRepositoryImpl(
 
     override fun getTopArticles(top: MutableList<Articles>): MutableList<Articles> {
         return dataSourceImpl.getTopArticles(top = top)
+    }
+
+    override fun getPhoto(photo: MutableList<Photo>): MutableList<Photo> {
+        return dataSourceImpl.getPhoto(photo = photo)
     }
 }
