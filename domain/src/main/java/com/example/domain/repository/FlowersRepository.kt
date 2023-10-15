@@ -11,4 +11,6 @@ interface FlowersRepository {
     fun getPhoto(photo : MutableList<Photo>) : MutableList<Photo>
 
     fun getFlowers(flowers : MutableList<Flowers>) : MutableList<Flowers>
+
+    fun getArticles(art : MutableList<Articles>) : MutableList<Articles>
 }

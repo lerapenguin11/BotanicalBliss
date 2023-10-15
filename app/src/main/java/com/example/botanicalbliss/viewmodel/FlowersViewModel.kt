@@ -6,6 +6,7 @@ import com.example.botanicalbliss.Constants
 import com.example.domain.entities.Articles
 import com.example.domain.entities.Flowers
 import com.example.domain.entities.Photo
+import com.example.domain.usecase.GetArticlesUseCase
 import com.example.domain.usecase.GetFlowersUseCase
 import com.example.domain.usecase.GetPhotoUseCase
 import com.example.domain.usecase.GetTopArticlesUseCase
@@ -14,7 +15,8 @@ import kotlinx.coroutines.launch
 class FlowersViewModel(
     private val getTopArticlesUseCase: GetTopArticlesUseCase,
     private val getPhotoUseCase: GetPhotoUseCase,
-    private val getFlowersUseCase: GetFlowersUseCase
+    private val getFlowersUseCase: GetFlowersUseCase,
+    private val getArticlesUseCase: GetArticlesUseCase
 ) : ViewModel(){
 
     fun getTopArticle(): MutableList<Articles> {
@@ -39,6 +41,15 @@ class FlowersViewModel(
         var mutableData = mutableListOf<Flowers>()
         viewModelScope.launch{
             mutableData = getFlowersUseCase.invoke(Constants.getFlowers())
+        }
+
+        return mutableData
+    }
+
+    fun getArticle(): MutableList<Articles> {
+        var mutableData = mutableListOf<Articles>()
+        viewModelScope.launch{
+            mutableData = getArticlesUseCase.invoke(Constants.getArticles())
         }
 
         return mutableData

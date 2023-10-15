@@ -36,6 +36,7 @@ class HomeFragment : Fragment() {
         binding.cvHome.outlineSpotShadowColor = ContextCompat.getColor(requireContext(), R.color.color3)
 
         binding.cvFlowers.setOnClickListener{ replaceFragmentMain(FlowersFragment()) }
+        binding.cvArticles.setOnClickListener { replaceFragmentMain(ArticlesFragment()) }
 
         observeDataTop()
         observeDataPhoto()

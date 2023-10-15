@@ -59,4 +59,22 @@ class FlowersDataSourceImpl : FlowersDataSource {
 
         return list
     }
+
+    override fun getArticles(art: MutableList<Articles>): MutableList<Articles> {
+        val list = mutableListOf<Articles>()
+
+        for (i in art){
+            val id = i.id
+            val title = i.title
+            val description = i.text
+            val icon = i.icon
+
+            val listLetterModel = Articles(
+                id = id, title = title, text = description, icon = icon)
+
+            list.add(listLetterModel)
+        }
+
+        return list
+    }
 }

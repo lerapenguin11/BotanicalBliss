@@ -20,4 +20,8 @@ class FlowersRepositoryImpl(
     override fun getFlowers(flowers: MutableList<Flowers>): MutableList<Flowers> {
         return dataSourceImpl.getFlowers(flowers = flowers)
     }
+
+    override fun getArticles(art: MutableList<Articles>): MutableList<Articles> {
+        return dataSourceImpl.getArticles(art = art)
+    }
 }

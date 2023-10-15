@@ -1,6 +1,7 @@
 package com.example.botanicalbliss.di
 
 import com.example.botanicalbliss.viewmodel.FlowersViewModel
+import com.example.domain.usecase.GetArticlesUseCase
 import com.example.domain.usecase.GetFlowersUseCase
 import com.example.domain.usecase.GetPhotoUseCase
 import com.example.domain.usecase.GetTopArticlesUseCase
@@ -12,7 +13,8 @@ val appModule = module {
         FlowersViewModel(
             getTopArticlesUseCase = GetTopArticlesUseCase(get()),
             getPhotoUseCase = GetPhotoUseCase(get()),
-            getFlowersUseCase = GetFlowersUseCase(get())
+            getFlowersUseCase = GetFlowersUseCase(get()),
+            getArticlesUseCase = GetArticlesUseCase(get())
         )
     }
 }
