@@ -11,15 +11,17 @@ import com.example.botanicalbliss.R
 import com.example.botanicalbliss.databinding.FragmentArticlesBinding
 import com.example.botanicalbliss.databinding.FragmentHomeBinding
 import com.example.botanicalbliss.presentation.adapter.ArticlesAdapter
+import com.example.botanicalbliss.presentation.listener.ArticlesListener
 import com.example.botanicalbliss.utilits.replaceFragmentMain
 import com.example.botanicalbliss.viewmodel.FlowersViewModel
+import com.example.domain.entities.Articles
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ArticlesFragment : Fragment() {
+class ArticlesFragment : Fragment(), ArticlesListener{
     private var _binding : FragmentArticlesBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModel<FlowersViewModel>()
-    private val adapter = ArticlesAdapter()
+    private val adapter = ArticlesAdapter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,5 +41,9 @@ class ArticlesFragment : Fragment() {
         binding.rvArticles.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvArticles.adapter = adapter
         adapter.setItem(viewModel.getArticle())
+    }
+
+    override fun getArticlesListener(art: Articles) {
+
     }
 }

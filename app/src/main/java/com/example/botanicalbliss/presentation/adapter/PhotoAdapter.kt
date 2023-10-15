@@ -9,9 +9,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.botanicalbliss.R
+import com.example.botanicalbliss.presentation.listener.PhotoListener
 import com.example.domain.entities.Photo
 
-class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {
+class PhotoAdapter(
+    private val listener : PhotoListener)
+    : RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {
 
     val photoList = mutableListOf<Photo>()
 
@@ -30,6 +33,7 @@ class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {
         Glide.with(holder.itemView)
             .load(photo.icon)
             .into(holder.icon)
+        holder.itemView.setOnClickListener { listener.getPhotoListener(photo) }
     }
 
     @SuppressLint("NotifyDataSetChanged")

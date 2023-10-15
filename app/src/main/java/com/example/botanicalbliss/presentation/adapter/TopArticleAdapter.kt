@@ -9,9 +9,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.botanicalbliss.R
+import com.example.botanicalbliss.presentation.listener.ArticlesListener
 import com.example.domain.entities.Articles
 
-class TopArticleAdapter : RecyclerView.Adapter<TopArticleAdapter.TopArticleViewHolder>() {
+class TopArticleAdapter(private val listener : ArticlesListener) : RecyclerView.Adapter<TopArticleAdapter.TopArticleViewHolder>() {
 
     val topList = mutableListOf<Articles>()
 
@@ -30,6 +31,7 @@ class TopArticleAdapter : RecyclerView.Adapter<TopArticleAdapter.TopArticleViewH
         Glide.with(holder.itemView)
             .load(top.icon)
             .into(holder.icon)
+        holder.itemView.setOnClickListener { listener.getArticlesListener(top) }
     }
 
     @SuppressLint("NotifyDataSetChanged")

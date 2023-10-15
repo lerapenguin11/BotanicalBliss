@@ -9,9 +9,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.botanicalbliss.R
+import com.example.botanicalbliss.presentation.listener.FlowersListener
 import com.example.domain.entities.Flowers
 
-class FlowersAdapter : RecyclerView.Adapter<FlowersAdapter.FlowersViewHolder>() {
+class FlowersAdapter(private val listener : FlowersListener) : RecyclerView.Adapter<FlowersAdapter.FlowersViewHolder>() {
 
     val flowersList = mutableListOf<Flowers>()
 
@@ -31,6 +32,7 @@ class FlowersAdapter : RecyclerView.Adapter<FlowersAdapter.FlowersViewHolder>() 
             .load(flowers.icon)
             .into(holder.icon)
         holder.desc.text = flowers.text
+        holder.itemView.setOnClickListener { listener.getFlowersListener(flowers) }
     }
 
     @SuppressLint("NotifyDataSetChanged")

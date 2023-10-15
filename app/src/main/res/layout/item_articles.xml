@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:cardCornerRadius="13dp"
+            android:backgroundTint="#1361D2C4"
             app:cardPreventCornerOverlap="false">
 
             <ImageView
