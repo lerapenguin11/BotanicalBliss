@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background1">
+
+    <!--<ScrollView
+        android:id="@+id/scrollView_all_trending"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="160dp">
+
+        <LinearLayout
+            android:id="@+id/innerLinearLayout_all_trending"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+    </ScrollView>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ic_detail_art"
+            android:layout_width="match_parent"
+            android:layout_height="282dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bt_arrow"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="23dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_details_art_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:fontFamily="@font/sf_pro_text_bold"
+            android:textColor="@color/color1"
+            android:textSize="27sp"
+            android:layout_marginStart="23dp"
+            android:layout_marginEnd="23dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_detail_art"
+            tools:text="Circle Cactus" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:layout_marginTop="23dp"
+            android:textColor="#495566"
+            android:textSize="14sp"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            app:layout_constraintStart_toStartOf="@+id/tv_details_art_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_details_art_title" />
+
+        <TextView
+            android:id="@+id/tv_details_art_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="The word derives, through Latin, from
+the Ancient Greek κάκτος, kaktos, a name orig
+inally used by Theophrastus for a spiny plant
+whose identity is not certain. Cacti occur in a
+wide range of shapes and sizes. Most cacti live
+in habitats subject to at least some drought. "
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:layout_marginTop="20dp"
+            android:textColor="#6A6F7D"
+            android:textSize="14sp"
+            android:lineHeight="25dp"
+            android:layout_marginEnd="23dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
