@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background1">
+    android:background="@color/background1"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <ScrollView
         android:id="@+id/scrollView_all_trending"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="160dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/innerLinearLayout_all_trending"
@@ -25,7 +23,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/ic_detail_art"
+                    android:id="@+id/ic_detail_flowers"
                     android:layout_width="match_parent"
                     android:layout_height="282dp"
                     android:scaleType="fitXY"
@@ -54,7 +52,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
-                    android:id="@+id/tv_details_art_title"
+                    android:id="@+id/tv_details_flowers_title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="23dp"
@@ -65,23 +63,54 @@
                     android:layout_marginEnd="23dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ic_detail_art"
+                    app:layout_constraintTop_toBottomOf="@+id/ic_detail_flowers"
                     tools:text="Circle Cactus" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center"
+                    android:background="#00000000"
+                    android:backgroundTint="#FFB400"
+                    android:foregroundTint="#FFB400"
+                    android:isIndicator="true"
+                    android:progressBackgroundTint="#606060"
+                    android:progressTint="#FFB400"
+                    android:rating="3.7"
+                    android:stepSize="0.1"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_details_flowers_title"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_details_flowers_title" />
+
+                <TextView
+                    android:id="@+id/tv_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="3.7"
+                    android:layout_marginStart="8dp"
+                    android:textColor="#495566"
+                    android:fontFamily="@font/sf_pro_text_bold"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+                    app:layout_constraintStart_toEndOf="@+id/ratingBar"
+                    app:layout_constraintTop_toTopOf="@+id/ratingBar" />
 
                 <TextView
                     android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_text_semibold"
                     android:text="@string/description"
-                    android:layout_marginTop="23dp"
                     android:textColor="#495566"
                     android:textSize="14sp"
-                    android:fontFamily="@font/sf_pro_text_semibold"
-                    app:layout_constraintStart_toStartOf="@+id/tv_details_art_title"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_details_art_title" />
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="@+id/ratingBar"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_star" />
 
                 <TextView
-                    android:id="@+id/tv_details_art_desc"
+                    android:id="@+id/tv_details_flowers_desc"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     tools:text="The word derives, through Latin, from
@@ -99,6 +128,7 @@ in habitats subject to at least some drought. "
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/textView13"
                     app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
