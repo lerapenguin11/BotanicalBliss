@@ -1,6 +1,7 @@
 package com.example.data.repository
 
 import com.example.domain.entities.Articles
+import com.example.domain.entities.Flowers
 import com.example.domain.entities.Photo
 
 class FlowersDataSourceImpl : FlowersDataSource {
@@ -33,6 +34,25 @@ class FlowersDataSourceImpl : FlowersDataSource {
 
             val listLetterModel = Photo(
                 id = id, icon = icon, tag = tag)
+
+            list.add(listLetterModel)
+        }
+
+        return list
+    }
+
+    override fun getFlowers(flowers: MutableList<Flowers>): MutableList<Flowers> {
+        val list = mutableListOf<Flowers>()
+
+        for (i in flowers){
+            val id = i.id
+            val title = i.title
+            val description = i.text
+            val icon = i.icon
+            val star = i.star
+
+            val listLetterModel = Flowers(
+                id = id, title = title, text = description, icon = icon, star = star)
 
             list.add(listLetterModel)
         }
