@@ -8,4 +8,11 @@
     <string name="title_on2">Read Many Articles About Plant</string>
     <string name="text_on2">Let\'s learn more about beautiful plants and read many articles about plants and gardening</string>
     <string name="start">Start</string>
+    <string name="hello_florist">Hello Florist,</string>
+    <string name="text_toolbar">Let’s Learn More About Plants</string>
+    <string name="home">home</string>
+    <string name="flowers">Flowers</string>
+    <string name="articles">ARTICLES</string>
+    <string name="top_articles">Top Articles</string>
+    <string name="photography">Photography</string>
 </resources>
