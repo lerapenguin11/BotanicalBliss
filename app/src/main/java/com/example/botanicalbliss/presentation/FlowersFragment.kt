@@ -41,7 +41,7 @@ class FlowersFragment : Fragment(), FlowersListener {
     }
 
     private fun observeDataFlowers() {
-        binding.rvFlowers.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvFlowers.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.rvFlowers.adapter = adapter
         adapter.setItem(viewModel.getFlowers())
     }

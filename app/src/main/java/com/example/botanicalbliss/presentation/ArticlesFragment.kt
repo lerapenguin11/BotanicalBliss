@@ -1,6 +1,7 @@
 package com.example.botanicalbliss.presentation
 
 import android.app.Dialog
+import android.graphics.Color
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -41,7 +42,7 @@ class ArticlesFragment : Fragment(), ArticlesListener{
     }
 
     private fun observeDataArticles() {
-        binding.rvArticles.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvArticles.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.rvArticles.adapter = adapter
         adapter.setItem(viewModel.getArticle())
     }
@@ -51,8 +52,8 @@ class ArticlesFragment : Fragment(), ArticlesListener{
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(com.example.botanicalbliss.R.layout.full_screen_details_articles)
         dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-        dialog.window?.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        dialog.window?.statusBarColor = ContextCompat.getColor(requireContext(), android.R.color.transparent)
+        dialog.window?.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+        dialog.window?.statusBarColor = Color.TRANSPARENT
 
         val icon : ImageView = dialog.findViewById(com.example.botanicalbliss.R.id.ic_detail_art)
         val title : TextView = dialog.findViewById(com.example.botanicalbliss.R.id.tv_details_art_title)
